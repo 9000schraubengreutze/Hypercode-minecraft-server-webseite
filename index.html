@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HyperCode Survival — Minecraft Java & Bedrock Crossplay Server</title>
+  <meta name="description" content="HyperCode Survival ist ein freundlicher Minecraft-Server mit Crossplay für Java & Bedrock (ab Version 1.21). Survival-Fokus, kein Griefing, faire Regeln. Jetzt beitreten." />
+  <meta property="og:title" content="HyperCode Survival — Minecraft Crossplay Server" />
+  <meta property="og:description" content="Survival-Server mit Java & Bedrock Crossplay. Kein Griefing. Ab Version 1.21." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%235CC04A'/%3E%3Cpath d='M8 8h16v4H8z' fill='%23120f0c'/%3E%3Cpath d='M8 14h4v10H8z' fill='%23120f0c'/%3E%3Cpath d='M20 14h4v10h-4z' fill='%23120f0c'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="brand" aria-label="HyperCode Survival — Startseite">
+        <svg class="brand__logo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="7" fill="currentColor" />
+          <path d="M9 9h6v5H9zM17 9h6v5h-6zM9 18h6v5H9zM17 18h6v5h-6z" fill="var(--color-bg)" />
+          <rect x="12" y="12" width="3" height="3" fill="currentColor" opacity="0.55" />
+        </svg>
+        <span class="brand__name">HyperCode<span class="brand__name-accent">Survival</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="#features" class="nav__link">Features</a>
+        <a href="#verbinden" class="nav__link">Verbinden</a>
+        <a href="#regeln" class="nav__link">Regeln</a>
+        <a href="#community" class="nav__link">Community</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Zum hellen Modus wechseln"></button>
+        <a href="#verbinden" class="btn btn--primary btn--sm">Jetzt beitreten</a>
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <a href="#features" class="mobile-nav__link">Features</a>
+      <a href="#verbinden" class="mobile-nav__link">Verbinden</a>
+      <a href="#regeln" class="mobile-nav__link">Regeln</a>
+      <a href="#community" class="mobile-nav__link">Community</a>
+    </nav>
+  </header>
+
+  <span id="top"></span>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="hero.png" alt="" />
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="container hero__content">
+        <span class="badge badge--live">
+          <span class="badge__dot"></span> Survival Crossplay Server
+        </span>
+        <h1 class="hero__title">
+          Überlebe gemeinsam.<br />
+          <span class="hero__title-accent">Auf HyperCode Survival.</span>
+        </h1>
+        <p class="hero__subtitle">
+          Ein freundlicher Minecraft-Server mit echtem Crossplay für Java &amp; Bedrock.
+          Reines Survival, faire Regeln und null Griefing — baue, was du willst, mit Spielern, die mitspielen.
+        </p>
+
+        <!-- IP COPY CARD -->
+        <div class="ip-card" id="ipCard">
+          <div class="ip-card__info">
+            <span class="ip-card__label">Server-Adresse</span>
+            <code class="ip-card__ip" id="serverIp">hypercodestudios.duckdns.org</code>
+          </div>
+          <div class="ip-card__actions">
+            <button class="btn btn--primary" id="copyBtn" data-copy="hypercodestudios.duckdns.org">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span class="copy-label">Kopieren</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero__meta">
+          <span class="chip"><strong>Java</strong> &amp; <strong>Bedrock</strong></span>
+          <span class="chip">ab Version 1.21</span>
+          <span class="chip">Survival</span>
+          <span class="chip chip--good">Kein Griefing</span>
+        </div>
+      </div>
+      <a href="#features" class="hero__scroll" aria-label="Nach unten scrollen">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">Warum HyperCode</span>
+          <h2 class="section__title">Ein Server, der Survival ernst nimmt.</h2>
+          <p class="section__lead">
+            Kein Pay-to-Win, keine überladenen Plugins. Wir konzentrieren uns auf das,
+            was Minecraft am besten macht: gemeinsam bauen, entdecken und überleben.
+          </p>
+        </header>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-card--lg">
+            <div class="feature-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3 8-8 9-5-1-8-4.5-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="feature-card__title">Java &amp; Bedrock Crossplay</h3>
+            <p class="feature-card__text">
+              Egal ob du am PC mit Java- Edition oder an Konsole, Handy oder Windows mit
+              Bedrock spielst — ihr spielt auf demselben Server, gemeinsam in einer Welt.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+            </div>
+            <h3 class="feature-card__title">Reines Survival</h3>
+            <p class="feature-card__text">Ernte, baue, übernachte. Klassisches Survival-Erlebnis ohne kostenloses Zeug.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5L12 2z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Aktive Versionen</h3>
+            <p class="feature-card__text">Kompatibel ab Minecraft 1.21 — spiel mit deiner aktuellen Lieblingsversion.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="feature-card__title">Griefing-Schutz</h3>
+            <p class="feature-card__text">Strenge No-Griefing-Regel und aktives Team. Deine Bauten bleiben deine Bauten.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/><path d="M15 20c0-2 1.5-3.5 4-3.5"/></svg>
+            </div>
+            <h3 class="feature-card__title">Faire Community</h3>
+            <p class="feature-card__text">Freundliche Spieler aus der Schulstufe — hilfsbereit und respektvoll miteinander.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERBINDEN -->
+    <section class="section section--alt" id="verbinden">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">So spielst du mit</span>
+          <h2 class="section__title">In drei Schritten auf dem Server.</h2>
+          <p class="section__lead">
+            Kopiere die Adresse, füge sie in Minecraft ein und los geht's. Für Java und Bedrock.
+          </p>
+        </header>
+
+        <div class="connect-grid">
+          <!-- JAVA -->
+          <div class="connect-card">
+            <div class="connect-card__top">
+              <span class="platform-tag platform-tag--java">Java Edition</span>
+              <span class="connect-card__hint">PC · Mac · Linux</span>
+            </div>
+            <ol class="steps" role="list">
+              <li class="step">
+                <span class="step__num">1</span>
+                <div>
+                  <strong>Minecraft Java starten</strong>
+                  <p>Öffne Minecraft Java Edition ab Version 1.21.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__num">2</span>
+                <div>
+                  <strong>Server hinzufügen</strong>
+                  <p>Gehe zu <em>Mehrspieler → Server hinzufügen</em> und gib die Adresse ein.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__num">3</span>
+                <div>
+                  <strong>Verbinden &amp; spielen</strong>
+                  <p>Doppelklick auf den Eintrag und du bist drin.</p>
+                </div>
+              </li>
+            </ol>
+            <code class="connect-card__ip">hypercodestudios.duckdns.org</code>
+          </div>
+
+          <!-- BEDROCK -->
+          <div class="connect-card">
+            <div class="connect-card__top">
+              <span class="platform-tag platform-tag--bedrock">Bedrock Edition</span>
+              <span class="connect-card__hint">Konsole · Handy · Windows</span>
+            </div>
+            <ol class="steps" role="list">
+              <li class="step">
+                <span class="step__num">1</span>
+                <div>
+                  <strong>Bedrock öffnen</strong>
+                  <p>Starte Minecraft (Bedrock) auf deinem Gerät ab Version 1.21.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__num">2</span>
+                <div>
+                  <strong>Serverliste öffnen</strong>
+                  <p>Gehe zu <em>Spielen → Server</em> und scrolle nach unten zu „Server hinzufügen“.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__num">3</span>
+                <div>
+                  <strong>Adresse eingeben</strong>
+                  <p>Servername frei wählbar, Adresse wie unten — Port automatisch.</p>
+                </div>
+              </li>
+            </ol>
+            <code class="connect-card__ip">hypercodestudios.duckdns.org</code>
+          </div>
+        </div>
+
+        <p class="connect-note">
+          Tipp: Speichere den Server in deiner Liste, damit du nicht jedes Mal die Adresse neu eingeben musst.
+        </p>
+      </div>
+    </section>
+
+    <!-- REGELN -->
+    <section class="section" id="regeln">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">Spiel mit Anstand</span>
+          <h2 class="section__title">Unsere Serverregeln.</h2>
+          <p class="section__lead">
+            Wenige, klare Regeln, damit alle Spaß haben. Wer sie bricht, fliegt.
+          </p>
+        </header>
+
+        <div class="rules">
+          <article class="rule rule--good">
+            <span class="rule__icon" aria-hidden="true">✓</span>
+            <div>
+              <h3 class="rule__title">Kein Griefing</h3>
+              <p class="rule__text">Fremde Bauten weder zerstören noch plündern. Was anderen gehört, bleibt unangetastet.</p>
+            </div>
+          </article>
+          <article class="rule rule--good">
+            <span class="rule__icon" aria-hidden="true">✓</span>
+            <div>
+              <h3 class="rule__title">Kein Cheaten oder Hacks</h3>
+              <p class="rule__text">Keine X-Ray, Fly-Hacks oder Dupes. Fair spielen ist Pflicht.</p>
+            </div>
+          </article>
+          <article class="rule rule--good">
+            <span class="rule__icon" aria-hidden="true">✓</span>
+            <div>
+              <h3 class="rule__title">Respektvoller Umgang</h3>
+              <p class="rule__text">Kein Spam, keine Beleidigungen, kein Toxisches Verhalten im Chat.</p>
+            </div>
+          </article>
+          <article class="rule rule--good">
+            <span class="rule__icon" aria-hidden="true">✓</span>
+            <div>
+              <h3 class="rule__title">Kein unkontrolliertes PvP</h3>
+              <p class="rule__text">Kämpfe nur, wenn beide einverstanden sind. Kein Spawn-Killing.</p>
+            </div>
+          </article>
+          <article class="rule rule--good">
+            <span class="rule__icon" aria-hidden="true">✓</span>
+            <div>
+              <h3 class="rule__title">Kein Lagg-Verursachen</h3>
+              <p class="rule__text">Keine übertriebenen Redstone-Maschinen, die den Server belasten.</p>
+            </div>
+          </article>
+          <article class="rule rule--good">
+            <span class="rule__icon" aria-hidden="true">✓</span>
+            <div>
+              <h3 class="rule__title">Bug-Reports statt Bug-Abuse</h3>
+              <p class="rule__text">Fehler gefunden? Melde sie im Discord, anstatt sie auszunutzen.</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="rules__footer">
+          Verstöße werden vom Team geprüft und können zum Bann führen. Bei Problemen oder Fragen
+          wende dich direkt an das Team — am besten im Discord.
+        </p>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="section section--cta" id="community">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__text">
+            <span class="eyebrow eyebrow--light">Community</span>
+            <h2 class="cta__title">Werde Teil der HyperCode-Community.</h2>
+            <p class="cta__lead">
+              Tritt unserem Discord bei: Regeln, Ankündigungen, Support und Mitspieler zum
+              gemeinsamen Bauen. Der schnellste Weg, falls mal etwas nicht klappt.
+            </p>
+            <div class="cta__actions">
+              <a href="https://discord.gg" class="btn btn--primary btn--lg" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.5 4.5A16.6 16.6 0 0 0 15.3 3l-.3.5c1.4.4 2.6 1 3.8 1.8a13 13 0 0 0-11.6 0c1.2-.8 2.5-1.4 3.8-1.8L10.7 3A16.6 16.6 0 0 0 6.5 4.5 17.4 17.4 0 0 0 3 17a16.6 16.6 0 0 0 5 2.5l.6-1c-.9-.3-1.7-.7-2.5-1.3l.6-.4a11.9 11.9 0 0 0 10.6 0l.6.4c-.8.6-1.6 1-2.5 1.3l.6 1A16.6 16.6 0 0 0 24 17a17.4 17.4 0 0 0-4.5-12.5zM9.3 14.7c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2zm5.4 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2z"/></svg>
+                Discord beitreten
+              </a>
+              <a href="#verbinden" class="btn btn--ghost btn--lg">Jetzt spielen</a>
+            </div>
+          </div>
+          <div class="cta__visual" aria-hidden="true">
+            <div class="cta__blocks">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="brand">
+          <svg class="brand__logo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="28" height="28" rx="7" fill="currentColor" />
+            <path d="M9 9h6v5H9zM17 9h6v5h-6zM9 18h6v5H9zM17 18h6v5h-6z" fill="var(--color-bg)" />
+            <rect x="12" y="12" width="3" height="3" fill="currentColor" opacity="0.55" />
+          </svg>
+          <span class="brand__name">HyperCode<span class="brand__name-accent">Survival</span></span>
+        </a>
+        <p class="footer__tagline">Survival Crossplay für Java &amp; Bedrock. Ab Version 1.21.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer-Navigation">
+        <a href="#features">Features</a>
+        <a href="#verbinden">Verbinden</a>
+        <a href="#regeln">Regeln</a>
+        <a href="#community">Community</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> HyperCode Survival. Nicht offiziell mit Mojang oder Microsoft verbunden.</p>
+      <p class="footer__made">Minecraft ist eine Marke von Mojang Synergies AB.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
