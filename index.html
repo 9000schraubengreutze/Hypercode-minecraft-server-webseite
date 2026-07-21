@@ -9,7 +9,7 @@
   <meta property="og:description" content="Survival-Server mit Java & Bedrock Crossplay. Kein Griefing. Ab Version 1.21." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="hero.png" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23A855F7'/%3E%3Cpath d='M8 8h16v4H8z' fill='%23120f0c'/%3E%3Cpath d='M8 14h4v10H8z' fill='%23120f0c'/%3E%3Cpath d='M20 14h4v10h-4z' fill='%23120f0c'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -27,6 +27,7 @@
         <a href="#features" class="nav__link">Features</a>
         <a href="#verbinden" class="nav__link">Verbinden</a>
         <a href="#regeln" class="nav__link">Regeln</a>
+        <a href="#faq" class="nav__link">FAQ</a>
         <a href="#community" class="nav__link">Community</a>
       </nav>
 
@@ -42,6 +43,7 @@
       <a href="#features" class="mobile-nav__link">Features</a>
       <a href="#verbinden" class="mobile-nav__link">Verbinden</a>
       <a href="#regeln" class="mobile-nav__link">Regeln</a>
+      <a href="#faq" class="mobile-nav__link">FAQ</a>
       <a href="#community" class="mobile-nav__link">Community</a>
     </nav>
   </header>
@@ -299,6 +301,101 @@
       </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">Häufig gestellte Fragen</span>
+          <h2 class="section__title">FAQ — Fragen &amp; Antworten</h2>
+          <p class="section__lead">
+            Hier findest du schnelle Antworten auf die am häufigsten gestellten Fragen unserer Community.
+          </p>
+        </header>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item" id="faq-item-1">
+            <button class="faq-trigger" id="faq-btn-1" aria-expanded="false" aria-controls="faq-content-1">
+              <span class="faq-trigger__title">Kann ich wirklich mit Java und Bedrock zusammen spielen?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq-content" id="faq-content-1" role="region" aria-labelledby="faq-btn-1" aria-hidden="true">
+              <div class="faq-content__inner">
+                <p>
+                  Ja, absolut! Unser Server nutzt ein fortschrittliches Übersetzungstool (Geyser/Floodgate), das es Spielern auf der Bedrock Edition (z. B. auf Konsolen wie Switch, PlayStation, Xbox, Mobilgeräten oder Windows 10/11) ermöglicht, nahtlos und ohne spürbare Einschränkungen zusammen mit Spielern der Java Edition auf derselben Survival-Welt zu spielen.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-item-2">
+            <button class="faq-trigger" id="faq-btn-2" aria-expanded="false" aria-controls="faq-content-2">
+              <span class="faq-trigger__title">Welche Minecraft-Versionen werden unterstützt?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq-content" id="faq-content-2" role="region" aria-labelledby="faq-btn-2" aria-hidden="true">
+              <div class="faq-content__inner">
+                <p>
+                  Der Server läuft nativ auf der Minecraft-Version <strong>26.1.2</strong>. Dank unseres Cross-Version-Plugins kannst du jedoch auch mit vielen anderen neueren oder etwas älteren Spielversionen beitreten. Falls du Verbindungsprobleme hast, empfehlen wir die Nutzung der Version 26.1.2 oder das Beitreten über unseren Discord, wo wir bei Problemen helfen.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-item-3">
+            <button class="faq-trigger" id="faq-btn-3" aria-expanded="false" aria-controls="faq-content-3">
+              <span class="faq-trigger__title">Kostet das Spielen auf dem Server Geld?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq-content" id="faq-content-3" role="region" aria-labelledby="faq-btn-3" aria-hidden="true">
+              <div class="faq-content__inner">
+                <p>
+                  Nein, niemals! HyperCode Survival ist ein reines Hobby- und Communityprojekt. Bei uns gibt es kein Pay-to-Win, keine kaufbaren Echtgeld-Ränge mit Spielvorteilen und keine nervigen Paywalls. Alle spielerischen Features sind für jeden völlig kostenlos zugänglich.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-item-4">
+            <button class="faq-trigger" id="faq-btn-4" aria-expanded="false" aria-controls="faq-content-4">
+              <span class="faq-trigger__title">Wie kann ich mich auf dem Server vor Griefing schützen?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq-content" id="faq-content-4" role="region" aria-labelledby="faq-btn-4" aria-hidden="true">
+              <div class="faq-content__inner">
+                <p>
+                  Wir setzen auf eine Kombination aus Vertrauen, guten Umgangsformen und starken Sicherheits-Tools im Hintergrund. Unsere Administratoren loggen jede Blockänderung und Kisteninteraktion. Sollte jemand griefen oder stehlen, können wir die Schäden sekundenschnell und vollständig rückgängig machen (Rollback) und den Übeltäter permanent ausschließen. Melde Vorfälle einfach direkt im Discord.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-item-5">
+            <button class="faq-trigger" id="faq-btn-5" aria-expanded="false" aria-controls="faq-content-5">
+              <span class="faq-trigger__title">Benötige ich zusätzliche Mods oder Plugins?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="faq-content" id="faq-content-5" role="region" aria-labelledby="faq-btn-5" aria-hidden="true">
+              <div class="faq-content__inner">
+                <p>
+                  Nein, du kannst mit dem ganz normalen, unmodifizierten Minecraft-Client (Vanilla) joinen! Optionale Features wie der Ingame-Sprachchat (Simple Voice Chat Mod) können genutzt werden, wenn du die entsprechende Mod installierst. Falls du das nicht möchtest, kannst du dich aber auch wie gewohnt über Discord unterhalten oder den Ingame-Textchat nutzen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- COMMUNITY -->
     <section class="section section--cta" id="community">
       <div class="container">
@@ -335,11 +432,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#top" class="brand">
-          <svg class="brand__logo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <rect x="2" y="2" width="28" height="28" rx="7" fill="currentColor" />
-            <path d="M9 9h6v5H9zM17 9h6v5h-6zM9 18h6v5H9zM17 18h6v5h-6z" fill="var(--color-bg)" />
-            <rect x="12" y="12" width="3" height="3" fill="currentColor" opacity="0.55" />
-          </svg>
+          <img class="brand__logo" src="logo.png" alt="HyperCode Logo">
           <span class="brand__name">HyperCode<span class="brand__name-accent">Survival</span></span>
         </a>
         <p class="footer__tagline">Survival Crossplay für Java &amp; Bedrock. Server-Version 26.1.2.</p>
@@ -348,6 +441,7 @@
         <a href="#features">Features</a>
         <a href="#verbinden">Verbinden</a>
         <a href="#regeln">Regeln</a>
+        <a href="#faq">FAQ</a>
         <a href="#community">Community</a>
       </nav>
     </div>

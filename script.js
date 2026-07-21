@@ -103,8 +103,36 @@
     }, 1800);
   }
 
+  // FAQ Accordion
+  var faqTriggers = document.querySelectorAll('.faq-trigger');
+  faqTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var expanded = trigger.getAttribute('aria-expanded') === 'true';
+      var contentId = trigger.getAttribute('aria-controls');
+      var content = document.getElementById(contentId);
+
+      // Close all other items
+      faqTriggers.forEach(function (otherTrigger) {
+        if (otherTrigger !== trigger) {
+          otherTrigger.setAttribute('aria-expanded', 'false');
+          var otherContentId = otherTrigger.getAttribute('aria-controls');
+          var otherContent = document.getElementById(otherContentId);
+          if (otherContent) {
+            otherContent.setAttribute('aria-hidden', 'true');
+          }
+        }
+      });
+
+      // Toggle current item
+      trigger.setAttribute('aria-expanded', !expanded ? 'true' : 'false');
+      if (content) {
+        content.setAttribute('aria-hidden', !expanded ? 'false' : 'true');
+      }
+    });
+  });
+
   // Reveal on scroll
-  var reveals = document.querySelectorAll('.feature-card, .rule, .connect-card, .connect-note, .rules__footer');
+  var reveals = document.querySelectorAll('.feature-card, .rule, .connect-card, .connect-note, .rules__footer, .faq-item');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
